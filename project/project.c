@@ -41,10 +41,8 @@ int main(void) {
             printf("수입 활동을 입력하세요: ");
             scanf(" %s", description);
             balance += amount;
-            if (recordCount < 100) {
-                snprintf(records[recordCount], sizeof(records[recordCount]), "수입: +%.2f원, 활동: %s, 잔액: %.2f원", amount, description, balance);
-                recordCount++;
-            }
+            snprintf(records[recordCount], sizeof(records[recordCount]), "수입: +%.2f원, 활동: %s, 잔액: %.2f원", amount, description, balance);
+            recordCount++;
             printf("수입 %.2f원이 추가되었습니다.\n", amount);
         } else if (choice == 2) {
             while (1) {
@@ -57,10 +55,8 @@ int main(void) {
                 printf("지출 활동을 입력하세요: ");
                 scanf(" %s", description);
                 balance -= amount;
-                if (recordCount < 100) {
-                    snprintf(records[recordCount], sizeof(records[recordCount]), "지출: -%.2f원, 활동: %s, 잔액: %.2f원", amount, description, balance);
-                    recordCount++;
-                }
+                snprintf(records[recordCount], sizeof(records[recordCount]), "지출: -%.2f원, 활동: %s, 잔액: %.2f원", amount, description, balance);
+                recordCount++;
                 printf("지출 %.2f원이 차감되었습니다.\n", amount);
                 break;
             }
